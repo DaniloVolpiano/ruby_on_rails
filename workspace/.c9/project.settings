@@ -1,4 +1,7 @@
 {
+    "ace": {
+        "@tabSize": 2
+    },
     "build": {
         "@saveall": true
     },
