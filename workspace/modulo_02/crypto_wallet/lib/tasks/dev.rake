@@ -5,9 +5,9 @@ namespace :dev do
       show_spinner("Apagando BD...") {%x(rails db:drop)}
       show_spinner("Criando BD...") {%x(rails db:create)}
       show_spinner("Migrando BD...") {%x(rails db:migrate)}
-      %x(rails dev:add_coins)
       %x(rails dev:add_mining_types)
-    else
+      %x(rails dev:add_coins)
+    else 
       puts "Você não está em ambiente de desenvolvimento!"
     end
   end
@@ -19,27 +19,32 @@ namespace :dev do
       coins = [
               { description: "Bitcoin",
               acronym: "BTC",
-              url_image: "https://lh3.googleusercontent.com/proxy/SP3CYl0Ypat6TQV6NlLcXIElm668R8EHcwL4tyuJEV3k3SxpFi0OFL9EKSrRxIdtR2WrXT1MMe_P5evSjYEjYOAtBH9LRSaVrwiTO1iG06WXkFGrMxQ1Iu3E0-whe0M"
+              url_image: "https://lh3.googleusercontent.com/proxy/SP3CYl0Ypat6TQV6NlLcXIElm668R8EHcwL4tyuJEV3k3SxpFi0OFL9EKSrRxIdtR2WrXT1MMe_P5evSjYEjYOAtBH9LRSaVrwiTO1iG06WXkFGrMxQ1Iu3E0-whe0M",
+              mining_type: MiningType.find_by(acronym: 'PoW')
               },
               {
               description: "Ethereum",
               acronym: "ETH",
-              url_image: "https://cdn4.iconfinder.com/data/icons/cryptocoins/227/ETH-512.png"    
+              url_image: "https://cdn4.iconfinder.com/data/icons/cryptocoins/227/ETH-512.png",
+              mining_type: MiningType.all.sample
               },
               {
               description: "Dash",
               acronym: "DASH",
-              url_image: "https://media.dash.org/wp-content/uploads/dash-D-blue.png"  
+              url_image: "https://media.dash.org/wp-content/uploads/dash-D-blue.png",
+              mining_type: MiningType.all.sample
               },
               {
               description: "Iota",
               acronym: "IOT",
-              url_image: "https://img.icons8.com/ios/500/iota.png"  
+              url_image: "https://img.icons8.com/ios/500/iota.png",  
+              mining_type: MiningType.all.sample
               },
               {
               description: "ZCash",
               acronym: "ZEC",
-              url_image: "https://z.cash/wp-content/uploads/2020/03/zcash-icon-fullcolor.png"  
+              url_image: "https://z.cash/wp-content/uploads/2020/03/zcash-icon-fullcolor.png",  
+              mining_type: MiningType.all.sample
               }
           ]
           
@@ -53,9 +58,9 @@ namespace :dev do
   task add_mining_types: :environment do
     show_spinner("Cadastrando tipos de mineração...") do
       mining_types = [
-        {name: "Proof of Work", acronym: "PoW"},
-        {name: "Proof of Stake", acronym: "PoS"},
-        {name: "Proof of Capacity", acronym: "PoC"}
+        {description: "Proof of Work", acronym: "PoW"},
+        {description: "Proof of Stake", acronym: "PoS"},
+        {description: "Proof of Capacity", acronym: "PoC"}
       ]
       
       mining_types.each do |mining_type|
