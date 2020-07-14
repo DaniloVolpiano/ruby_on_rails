@@ -1,6 +1,8 @@
 {
     "ace": {
-        "@tabSize": 2
+        "@guessTabSize": true,
+        "@tabSize": 2,
+        "@useSoftTabs": true
     },
     "build": {
         "@saveall": true

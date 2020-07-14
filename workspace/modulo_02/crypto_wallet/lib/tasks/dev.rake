@@ -19,7 +19,7 @@ namespace :dev do
       coins = [
               { description: "Bitcoin",
               acronym: "BTC",
-              url_image: "https://lh3.googleusercontent.com/proxy/SP3CYl0Ypat6TQV6NlLcXIElm668R8EHcwL4tyuJEV3k3SxpFi0OFL9EKSrRxIdtR2WrXT1MMe_P5evSjYEjYOAtBH9LRSaVrwiTO1iG06WXkFGrMxQ1Iu3E0-whe0M",
+              url_image: "https://bitcoin.org/img/icons/opengraph.png?1594728624",
               mining_type: MiningType.find_by(acronym: 'PoW')
               },
               {
