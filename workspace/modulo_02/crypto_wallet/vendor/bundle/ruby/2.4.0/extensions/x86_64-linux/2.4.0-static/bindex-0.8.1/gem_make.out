@@ -1,0 +1,32 @@
+current directory: /home/danilovolpiano/Projetos/ruby_on_rails/workspace/modulo_02/crypto_wallet/vendor/bundle/ruby/2.4.0/gems/bindex-0.8.1/ext/skiptrace
+/usr/local/bin/ruby -r ./siteconf20200721-20081-hxsuh9.rb extconf.rb
+creating Makefile
+
+current directory: /home/danilovolpiano/Projetos/ruby_on_rails/workspace/modulo_02/crypto_wallet/vendor/bundle/ruby/2.4.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/danilovolpiano/Projetos/ruby_on_rails/workspace/modulo_02/crypto_wallet/vendor/bundle/ruby/2.4.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+In file included from /usr/local/include/ruby-2.4.0/ruby.h:33,
+                 from cruby.c:1:
+/usr/local/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  631 | CONSTFUNC(void rb_secure_update(VALUE));
+      | ^~~~~~~~~
+In file included from /usr/local/include/ruby-2.4.0/ruby/ruby.h:2012,
+                 from /usr/local/include/ruby-2.4.0/ruby.h:33,
+                 from cruby.c:1:
+/usr/local/include/ruby-2.4.0/ruby/intern.h:257:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  257 | CONSTFUNC(void rb_error_untrusted(VALUE));
+      | ^~~~~~~~~
+/usr/local/include/ruby-2.4.0/ruby/intern.h:259:1: warning: ‘const’ attribute on function returning ‘void’ [-Wattributes]
+  259 | CONSTFUNC(void rb_check_trusted(VALUE));
+      | ^~~~~~~~~
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/danilovolpiano/Projetos/ruby_on_rails/workspace/modulo_02/crypto_wallet/vendor/bundle/ruby/2.4.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20200721-20081-181694/skiptrace/internal
