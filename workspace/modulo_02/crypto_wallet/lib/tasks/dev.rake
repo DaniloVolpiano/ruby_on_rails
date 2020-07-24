@@ -45,8 +45,26 @@ namespace :dev do
               acronym: "ZEC",
               url_image: "https://z.cash/wp-content/uploads/2020/03/zcash-icon-fullcolor.png",  
               mining_type: MiningType.all.sample
+              },
+              {
+              description: "Litecoin",
+              acronym: "LTC",
+              url_image: "https://janusinvestimentos.com/wp-content/uploads/2018/03/LTC-400.png",  
+              mining_type: MiningType.all.sample
+              },
+              {
+              description: "Ripple",
+              acronym: "XRP",
+              url_image: "https://www.comocomprarcriptomoedas.com/wp-content/uploads/2018/04/ripple-logo-xrp.png",  
+              mining_type: MiningType.all.sample
+              },
+              {
+              description: "Stellar Lumen",
+              acronym: "ZEC",
+              url_image: "https://www.hashinvest.com.br/wp-content/uploads/2018/08/fcc70c_1040d226edf044ccbca11aa950ecadd8_mv2.png",  
+              mining_type: MiningType.all.sample
               }
-          ]
+            ]
           
       coins.each do |coin|
           Coin.find_or_create_by!(coin)
