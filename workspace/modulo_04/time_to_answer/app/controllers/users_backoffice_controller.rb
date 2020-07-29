@@ -1,0 +1,2 @@
+class UsersBackofficeController < ApplicationController
+end
