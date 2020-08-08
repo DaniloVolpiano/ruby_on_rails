@@ -1,7 +1,6 @@
 class AdminsBackoffice::AdminsController < AdminsBackofficeController
-  before_action:verify_password, only: [:update]
-  before_action:set_admin, only: [:edit, :update, :destroy]
-  
+  before_action :verify_password, only: [:update]
+  before_action :set_admin, only: [:edit, :update, :destroy]
 
   def index
     @admins = Admin.all.page(params[:page])
@@ -19,11 +18,11 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
       render :new
     end
   end
-  
+
   def edit
   end
 
-  def update
+  def update    
     if @admin.update(params_admin)
       redirect_to admins_backoffice_admins_path, notice: "Administrador atualizado com sucesso!"
     else
@@ -40,7 +39,7 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   end
 
   private
-
+  
   def params_admin
     params.require(:admin).permit(:email, :password, :password_confirmation)
   end
@@ -54,5 +53,4 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
       params[:admin].extract!(:password, :password_confirmation)
     end
   end
-  
 end
