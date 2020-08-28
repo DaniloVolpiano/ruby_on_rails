@@ -12,7 +12,7 @@
         <% if @user.errors.any? %>
             <div class="alert alert-danger alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-
+                
                 <ul>
                   <% @user.errors.full_messages.each do |message| %>
                     <li> <%= message %> </li>
@@ -21,7 +21,6 @@
             </div>
         <% end %>
         <%= form_with(url: users_backoffice_profile_path, model: @user , local: true, class:"form-horizontal form-label-left") do |form| %>
-
           <div class="form-group">
               <%= form.label :first_name, class:"control-label col-md-3 col-sm-3 col-xs-12" %>
               <div class="col-md-6 col-sm-6 col-xs-12">
@@ -43,6 +42,29 @@
               </div>
           </div>
 
+          <%= form.fields_for :user_profile do |profile_form|  %>
+            <div class="form-group">
+                <%= profile_form.label :address, class:"control-label col-md-3 col-sm-3 col-xs-12" %>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <%= profile_form.text_field :address, class:"form-control col-md-7 col-xs-12"%>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <%= profile_form.label :gender, class:"control-label col-md-3 col-sm-3 col-xs-12" %>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <%= profile_form.text_field :gender, class:"form-control col-md-7 col-xs-12"%>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <%= profile_form.label :birthdate, class:"control-label col-md-3 col-sm-3 col-xs-12" %>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <%= profile_form.text_field :birthdate, class:"form-control col-md-7 col-xs-12"%>
+                </div>
+            </div>
+          <% end %>
+
           <div class="form-group">
               <%= form.label :password, class:"control-label col-md-3 col-sm-3 col-xs-12" %>
               <div class="col-md-6 col-sm-6 col-xs-12">
@@ -50,7 +72,6 @@
                         class:"form-control col-md-7 col-xs-12" %>
               </div>
           </div>
-
           <div class="form-group">
               <%= form.label :password_confirmation, class:"control-label col-md-3 col-sm-3 col-xs-12" %>
               <div class="col-md-6 col-sm-6 col-xs-12">
@@ -58,14 +79,12 @@
                         class:"form-control col-md-7 col-xs-12" %>
               </div>
           </div>
-
           <div class="ln_solid"></div>
           <div class="form-group">
             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
               <button type="submit" class="btn btn-success">Enviar</button>
             </div>
           </div>
-
         <% end %>
       </div>
     </div>
