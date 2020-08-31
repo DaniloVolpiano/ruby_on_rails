@@ -2,7 +2,6 @@
 <div class="jumbotron">
   <h3><%= msg_jumbotron %></h3>
 </div>
-
 <% @questions.each do |question| %>
   <%= form_with url: site_answer_path do |form| %>
     <div class="panel panel-default">
@@ -34,6 +33,13 @@
     </div>
   <% end %>
 <% end %>
-<div class="text-center">
-  <%= paginate @questions %>
-</div>
+
+<% if user_signed_in? %>
+  <div class="text-center">
+    <%= paginate @questions %>
+  </div>
+<% else %>
+  <div class="alert alert-warning" role="alert">
+    Efetue login para poder continuar respondendo as questões...
+  </div>
+<% end %> 
