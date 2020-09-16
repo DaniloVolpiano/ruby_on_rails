@@ -1,2 +1,0 @@
-module UsersBackoffice::ZipCodeHelper
-end
